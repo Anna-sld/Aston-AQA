@@ -6,6 +6,7 @@ public class Main {
         checkSumSign();
         printColor();
         compareNumbers();
+        isSumInRange( 9, 5);
     }
 
     public static void printThreeWords() {
@@ -47,7 +48,14 @@ public class Main {
             System.out.println("a < b");
         }
     }
+    public static boolean isSumInRange(int a, int b) {
+        int sum = a + b;
+        boolean isAcceptableSum = sum >= 10 && sum <= 20;
+        System.out.println(isAcceptableSum);
+        return isAcceptableSum ;
+    }
 }
+
 
 
 
