@@ -7,6 +7,7 @@ public class Main {
         printColor();
         compareNumbers();
         isSumInRange( 9, 5);
+        checkNumber(15);
     }
 
     public static void printThreeWords() {
@@ -27,6 +28,7 @@ public class Main {
             System.out.println("Сумма отрицательная");
         }
     }
+
     public static void printColor() {
         int value = -70;
 
@@ -38,6 +40,7 @@ public class Main {
             System.out.println("Зеленый");
         }
     }
+
     public static void compareNumbers() {
         int a = 20;
         int b = 10;
@@ -48,13 +51,24 @@ public class Main {
             System.out.println("a < b");
         }
     }
+
     public static boolean isSumInRange(int a, int b) {
         int sum = a + b;
         boolean isAcceptableSum = sum >= 10 && sum <= 20;
         System.out.println(isAcceptableSum);
         return isAcceptableSum ;
     }
+
+    public static void checkNumber(int number) {
+        if (number >= 0) {
+            System.out.println("Число положительное");
+        } else {
+            System.out.println("Число отрицательное");
+        }
+    }
 }
+
+
 
 
 
