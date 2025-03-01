@@ -9,6 +9,7 @@ public class Main {
         isSumInRange( 9, 5);
         checkNumber(15);
         isNegative(7);
+        printStringMultipleTimes("Love",2);
     }
 
     public static void printThreeWords() {
@@ -67,12 +68,19 @@ public class Main {
             System.out.println("Число отрицательное");
         }
     }
+
     public static boolean isNegative(int number) {
         boolean isNeg = number <0;
         System.out.println(isNeg);
         return isNeg;
     }
+    public static void printStringMultipleTimes(String text, int times) {
+        for (int i = 0; i < times; i++) {
+            System.out.println(text);
+        }
+    }
 }
+
 
 
 
