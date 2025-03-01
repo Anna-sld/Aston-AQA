@@ -8,6 +8,7 @@ public class Main {
         compareNumbers();
         isSumInRange( 9, 5);
         checkNumber(15);
+        isNegative(7);
     }
 
     public static void printThreeWords() {
@@ -65,6 +66,11 @@ public class Main {
         } else {
             System.out.println("Число отрицательное");
         }
+    }
+    public static boolean isNegative(int number) {
+        boolean isNeg = number <0;
+        System.out.println(isNeg);
+        return isNeg;
     }
 }
 
