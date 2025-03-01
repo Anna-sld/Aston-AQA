@@ -10,6 +10,7 @@ public class Main {
         checkNumber(15);
         isNegative(7);
         printStringMultipleTimes("Love",2);
+        isLeapYear((1980));
     }
 
     public static void printThreeWords() {
@@ -79,6 +80,12 @@ public class Main {
             System.out.println(text);
         }
     }
+    public static boolean isLeapYear(int year) {
+        boolean isLpYear=(year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+                System.out.println(isLpYear);
+        return isLpYear;
+    }
+
 }
 
 
