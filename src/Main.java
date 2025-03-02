@@ -7,16 +7,18 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+
         printThreeWords();
         checkSumSign();
         printColor();
         compareNumbers();
-        isSumInRange( 9, 5);
+        isSumInRange(9, 5);
         checkNumber(15);
         isNegative(7);
-        printStringMultipleTimes("Love",2);
+        printStringMultipleTimes("Love", 2);
         isLeapYear((1980));
         invertArray(array);
+        invArray();
 
     }
 
@@ -66,7 +68,7 @@ public class Main {
         int sum = a + b;
         boolean isAcceptableSum = sum >= 10 && sum <= 20;
         System.out.println(isAcceptableSum);
-        return isAcceptableSum ;
+        return isAcceptableSum;
     }
 
     public static void checkNumber(int number) {
@@ -78,20 +80,23 @@ public class Main {
     }
 
     public static boolean isNegative(int number) {
-        boolean isNeg = number <0;
+        boolean isNeg = number < 0;
         System.out.println(isNeg);
         return isNeg;
     }
+
     public static void printStringMultipleTimes(String text, int times) {
         for (int i = 0; i < times; i++) {
             System.out.println(text);
         }
     }
+
     public static boolean isLeapYear(int year) {
-        boolean isLpYear=(year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
-                System.out.println(isLpYear);
+        boolean isLpYear = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+        System.out.println(isLpYear);
         return isLpYear;
     }
+
     public static void invertArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == 0) {
@@ -104,8 +109,20 @@ public class Main {
         System.out.println(Arrays.toString(array));
     }
 
+    public static void invArray() {
+        int[] array = new int[100];
 
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
+        }
+        System.out.println(Arrays.toString(array));
+    }
 }
+
+
+
+
+
 
 
 
