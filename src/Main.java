@@ -20,6 +20,8 @@ public class Main {
         invertArray(array);
         invArray();
         multiplyNumbersLessThanSix();
+        fillDiagonal();
+        createArray(7, 14);
 
     }
 
@@ -118,6 +120,7 @@ public class Main {
         }
         System.out.println(Arrays.toString(array));
     }
+
     public static void multiplyNumbersLessThanSix(){
     int[]array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         for (int i = 0; i < array.length; i++) {
@@ -127,6 +130,32 @@ public class Main {
         }
         System.out.println(Arrays.toString(array));
     }
+
+    public static void fillDiagonal() {
+        int[][] array = new int[9][9];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i][i] = 1;
+            array[i][array.length - 1 - i] = 1;
+        }
+        for (int[] row : array) {
+
+            System.out.println(Arrays.toString(row));
+
+        }
+    }
+
+    public static int[] createArray(int len, int initialValue) {
+        int[] array = new int[len];
+        for (int i = 0; i < len; i++) {
+            array[i] = initialValue;
+        }
+
+        System.out.println(Arrays.toString(array));
+
+        return array;
+    }
+
 }
 
 
