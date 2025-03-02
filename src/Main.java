@@ -1,7 +1,12 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Arrays;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         printThreeWords();
         checkSumSign();
         printColor();
@@ -11,6 +16,8 @@ public class Main {
         isNegative(7);
         printStringMultipleTimes("Love",2);
         isLeapYear((1980));
+        invertArray(array);
+
     }
 
     public static void printThreeWords() {
@@ -85,6 +92,18 @@ public class Main {
                 System.out.println(isLpYear);
         return isLpYear;
     }
+    public static void invertArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 0) {
+                array[i] = 1;
+            } else {
+                array[i] = 0;
+            }
+        }
+
+        System.out.println(Arrays.toString(array));
+    }
+
 
 }
 
