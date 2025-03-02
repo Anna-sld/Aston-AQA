@@ -19,6 +19,7 @@ public class Main {
         isLeapYear((1980));
         invertArray(array);
         invArray();
+        multiplyNumbersLessThanSix();
 
     }
 
@@ -114,6 +115,15 @@ public class Main {
 
         for (int i = 0; i < array.length; i++) {
             array[i] = i + 1;
+        }
+        System.out.println(Arrays.toString(array));
+    }
+    public static void multiplyNumbersLessThanSix(){
+    int[]array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 6) {
+                array[i] *= 2;
+            }
         }
         System.out.println(Arrays.toString(array));
     }
