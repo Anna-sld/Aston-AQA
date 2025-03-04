@@ -1,4 +1,5 @@
 import Product.Product;
+import Park.Park;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,6 +24,16 @@ public class Main {
             System.out.println();
         }
 
+        printPark();
+    }
 
+    private static void printPark() {
+        Park myPark = new Park("Парк аттракционов");
+
+        Park.Attraction carousel = myPark.new Attraction("Карусель", "12:00 - 17:00", 1250);
+        Park.Attraction roomFear = myPark.new Attraction("Комната страха", "12:00 - 17:00", 1450);
+
+        carousel.showInfo();
+        roomFear.showInfo();
     }
 }
