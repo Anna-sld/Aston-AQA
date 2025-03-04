@@ -10,5 +10,19 @@ public class Main {
                 false);
         laptop.printInfo();
 
+        Product[] productsArray = new Product[5];
+
+        productsArray[0] = new Product("Samsung S10 plus", "03.10.2017", "Samsung", "Korea", 170000, true);
+        productsArray[1] = new Product("Samsung S23", "11.08.2020", "Samsung", "Korea", 210000, true);
+        productsArray[2] = new Product("Samsung S20", "03.09.2019", "Samsung", "Korea", 200000, true);
+        productsArray[3] = new Product("Samsung S24", "01.09.2021", "Samsung", "Korea", 230000, false);
+        productsArray[4] = new Product("Samsung S23 plus", "10.03.2021", "Samsung", "Korea", 220000, true);
+
+        for (Product product : productsArray) {
+            product.printInfo();
+            System.out.println();
+        }
+
+
     }
 }
