@@ -1,9 +1,31 @@
 import Cat.Cat;
 import Dog.Dog;
 import FoodBowl.FoodBowl;
+import Circle.Circle;
+import Shape.Shape;
+import Triangle.Triangle;
+import Rectangle.Rectangle;
 
 public class Main {
     public static void main(String[] args) {
+        countAnimals();
+
+        displayAllShapes();
+    }
+
+    private static void displayAllShapes(){
+        Shape circle = new Circle(8, "Розовый", "Голубой");
+        Shape rectangle = new Rectangle(7, 9, "Золотой", "Красный");
+        Shape triangle = new Triangle(7, 11, 14, "Оранжевый", "Бордовый");
+
+        circle.displayInfo();
+        rectangle.displayInfo();
+        triangle.displayInfo();
+
+    }
+
+
+    private static void countAnimals(){
         Cat cat1 = new Cat("Петровей");
         Cat cat2 = new Cat("Бакс");
         Dog dog1 = new Dog("Бинго");
@@ -35,3 +57,6 @@ public class Main {
     }
 
 }
+
+
+
