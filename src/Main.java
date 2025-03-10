@@ -1,62 +1,45 @@
-import Cat.Cat;
-import Dog.Dog;
-import FoodBowl.FoodBowl;
-import Circle.Circle;
-import Shape.Shape;
-import Triangle.Triangle;
-import Rectangle.Rectangle;
+import ArrayChecker.ArrayChecker;
+import MyArraySizeException.MyArraySizeException;
 
 public class Main {
     public static void main(String[] args) {
-        countAnimals();
-
-        displayAllShapes();
+        checkArrayException();
+        checkArray();
     }
 
-    private static void displayAllShapes(){
-        Shape circle = new Circle(8, "Розовый", "Голубой");
-        Shape rectangle = new Rectangle(7, 9, "Золотой", "Красный");
-        Shape triangle = new Triangle(7, 11, 14, "Оранжевый", "Бордовый");
+    public static void checkArrayException() {
+        String[][] wrongArray = {
+                {"1", "1", "1", "1"},
+                {"2", "2", "2", "2"},
+                {"3", "3", "3", "3"},
+        };
 
-        circle.displayInfo();
-        rectangle.displayInfo();
-        triangle.displayInfo();
-
-    }
-
-
-    private static void countAnimals(){
-        Cat cat1 = new Cat("Петровей");
-        Cat cat2 = new Cat("Бакс");
-        Dog dog1 = new Dog("Бинго");
-        Dog dog2 = new Dog("Рекс");
-
-        cat1.run(180);
-        cat2.swim(5);
-        dog1.run(470);
-        dog2.swim(8);
-
-        FoodBowl bowl = new FoodBowl(20);
-
-        Cat[] cats = {cat1, cat2};
-
-        for (Cat cat : cats) {
-            cat.eat(bowl, 15);
+        try {
+            ArrayChecker.checkArraySize(wrongArray);
+        } catch (MyArraySizeException e) {
+            System.err.println("Ошибка: " + e.getMessage());
         }
-
-        for (Cat cat : cats) {
-            System.out.println(cat.name + " сыт: " + cat.isSatiety());
-        }
-
-        bowl.addFood(10);
-
-        System.out.println("Всего котов: " + Cat.getCatCount());
-        System.out.println("Всего собак: " + Dog.getDogCount());
-        System.out.println("Всего животных:" +(Cat.getCatCount() + Dog.getDogCount()));
-
     }
 
+    public static void checkArray() {
+        String[][] wrongArray = {
+                {"1", "1", "1", "1"},
+                {"2", "2", "2", "2"},
+                {"3", "3", "3", "3"},
+                {"4", "4", "4", "4"},
+        };
+
+        try {
+            ArrayChecker.checkArraySize(wrongArray);
+        } catch (MyArraySizeException e) {
+            System.err.println("Ошибка: " + e.getMessage());
+        }
+    }
 }
+
+
+
+
 
 
 
