@@ -5,9 +5,12 @@ import ArrayProcessor.ArrayProcessor;
 
 public class Main {
     public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4,};
+
         checkArrayException();
         checkArray();
         checkArrayData();
+        generateArrayIndexOutOfBoundsException(numbers);
     }
 
     public static void checkArrayException() {
@@ -51,6 +54,13 @@ public class Main {
 
         } catch (ArrayDataException e) {
             System.err.println("Ошибка: " + e.getMessage());
+        }
+    }
+    public static void generateArrayIndexOutOfBoundsException(int[] numbers ) {
+        try {
+            System.out.println("Попытка доступа к n-му элементу успешна: " + numbers[8]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Ошибка: выход за границы массива! " + e.getMessage());
         }
     }
 }
