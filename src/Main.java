@@ -1,10 +1,13 @@
 import ArrayChecker.ArrayChecker;
-import MyArraySizeException.MyArraySizeException;
+import ArraySizeException.ArraySizeException;
+import ArrayDataException.ArrayDataException;
+import ArrayProcessor.ArrayProcessor;
 
 public class Main {
     public static void main(String[] args) {
         checkArrayException();
         checkArray();
+        checkArrayData();
     }
 
     public static void checkArrayException() {
@@ -16,7 +19,7 @@ public class Main {
 
         try {
             ArrayChecker.checkArraySize(wrongArray);
-        } catch (MyArraySizeException e) {
+        } catch (ArraySizeException e) {
             System.err.println("Ошибка: " + e.getMessage());
         }
     }
@@ -31,11 +34,27 @@ public class Main {
 
         try {
             ArrayChecker.checkArraySize(wrongArray);
-        } catch (MyArraySizeException e) {
+        } catch (ArraySizeException e) {
+            System.err.println("Ошибка: " + e.getMessage());
+        }
+    }
+
+    public static void checkArrayData () {
+        try {
+            String[][] wrongArray = {
+                    {"1", "1", "1", "1"},
+                    {"2", "2", "ошибка", "2"},
+                    {"3", "3", "3", "3"},
+                    {"4", "4", "4", "4"}
+            };
+            System.out.println("Сумма элементов: " + ArrayProcessor.sumArray(wrongArray));
+
+        } catch (ArrayDataException e) {
             System.err.println("Ошибка: " + e.getMessage());
         }
     }
 }
+
 
 
 
