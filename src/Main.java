@@ -1,69 +1,45 @@
-import ArrayChecker.ArrayChecker;
-import ArraySizeException.ArraySizeException;
-import ArrayDataException.ArrayDataException;
-import ArrayProcessor.ArrayProcessor;
+import Student.Student;
+import StudentManager.StudentManager;
+import java.util.HashSet;
+import java.util.Set;
+
+import static StudentManager.StudentManager.printStudents;
+import static StudentManager.StudentManager.promoteStudents;
 
 public class Main {
     public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 4,};
-
-        checkArrayException();
-        checkArray();
-        checkArrayData();
-        generateArrayIndexOutOfBoundsException(numbers);
+        newStudent();
     }
 
-    public static void checkArrayException() {
-        String[][] wrongArray = {
-                {"1", "1", "1", "1"},
-                {"2", "2", "2", "2"},
-                {"3", "3", "3", "3"},
-        };
+    public static void newStudent () {
+        Set<Student> students = new HashSet<>();
+        students.add(new Student("Анна Солодкова", "Группа 1", 1, new int[]{5,5,5}));
+        students.add(new Student("Кузнецов Олег", "Группа 2", 2, new int[]{3,4,5}));
+        students.add(new Student("Осипов Игорь", "Группа 3", 1, new int[]{2,2,2}));
 
-        try {
-            ArrayChecker.checkArraySize(wrongArray);
-        } catch (ArraySizeException e) {
-            System.err.println("Ошибка: " + e.getMessage());
+        System.out.println("Исходный список студентов:");
+        for (Student student : students) {
+            System.out.println(student);
         }
-    }
 
-    public static void checkArray() {
-        String[][] wrongArray = {
-                {"1", "1", "1", "1"},
-                {"2", "2", "2", "2"},
-                {"3", "3", "3", "3"},
-                {"4", "4", "4", "4"},
-        };
+        StudentManager.removeLowPerformingStudents(students);
 
-        try {
-            ArrayChecker.checkArraySize(wrongArray);
-        } catch (ArraySizeException e) {
-            System.err.println("Ошибка: " + e.getMessage());
+        StudentManager.promoteStudents(students);
+
+        System.out.println("\nСписок студентов после удаления неуспевающих и перевода успешно сдавших:");
+        for (Student student : students) {
+            System.out.println(student);
         }
+
+        printStudents(students, 1);
+        printStudents(students, 2);
+        printStudents(students, 3);
     }
 
-    public static void checkArrayData () {
-        try {
-            String[][] wrongArray = {
-                    {"1", "1", "1", "1"},
-                    {"2", "2", "ошибка", "2"},
-                    {"3", "3", "3", "3"},
-                    {"4", "4", "4", "4"}
-            };
-            System.out.println("Сумма элементов: " + ArrayProcessor.sumArray(wrongArray));
-
-        } catch (ArrayDataException e) {
-            System.err.println("Ошибка: " + e.getMessage());
-        }
-    }
-    public static void generateArrayIndexOutOfBoundsException(int[] numbers ) {
-        try {
-            System.out.println("Попытка доступа к n-му элементу успешна: " + numbers[8]);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.err.println("Ошибка: выход за границы массива! " + e.getMessage());
-        }
-    }
 }
+
+
+
 
 
 
