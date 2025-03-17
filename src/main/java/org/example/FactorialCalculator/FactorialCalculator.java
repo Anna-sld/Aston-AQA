@@ -1,4 +1,4 @@
-package FactorialCalculator;
+package org.example.FactorialCalculator;
 
 public class FactorialCalculator {
     public static long factorial(int num) {

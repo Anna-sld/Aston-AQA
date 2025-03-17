@@ -1,4 +1,4 @@
-package TriangleAreaCalculator;
+package org.example.TriangleAreaCalculator;
 
 public class TriangleAreaCalculator {
     public static double calculateArea(double base, double height) {
