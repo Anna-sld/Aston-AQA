@@ -1,20 +1,22 @@
 package org.example.NumberComparisonTest;
 
 import org.example.NumberComparison.NumberComparison;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class NumberComparisonTest {
+    @Test
+    public void testCompareGreater() {
+        Assert.assertEquals(NumberComparison.compare(5, 3), "5 больше 3");
+    }
 
     @Test
-    public void testComparison() {
-        assertEquals("5 больше 3", NumberComparison.compare(5, 3));
-        assertEquals("3 меньше 5", NumberComparison.compare(3, 5));
-        assertEquals("Числа равны", NumberComparison.compare(7, 7));
+    public void testCompareLess() {
+        Assert.assertEquals(NumberComparison.compare(2, 7), "2 меньше 7");
+    }
+
+    @Test
+    public void testCompareEqual() {
+        Assert.assertEquals(NumberComparison.compare(4, 4), "Числа равны");
     }
 }
-
-
-

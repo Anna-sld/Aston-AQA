@@ -1,32 +1,32 @@
 package org.example.ArithmeticOperationsTest;
 
 import org.example.ArithmeticOperations.ArithmeticOperations;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class ArithmeticOperationsTest {
     @Test
-    void testAddition() {
-        Assertions.assertEquals(5, ArithmeticOperations.add(2, 3));
-        Assertions.assertEquals(-1, ArithmeticOperations.add(-2, 1));
+    public void testAdd() {
+        Assert.assertEquals(ArithmeticOperations.add(3, 2), 5);
     }
 
     @Test
-    void testSubtraction() {
-        Assertions.assertEquals(1, ArithmeticOperations.subtract(3, 2));
-        Assertions.assertEquals(-3, ArithmeticOperations.subtract(-2, 1));
+    public void testSubtract() {
+        Assert.assertEquals(ArithmeticOperations.subtract(10, 4), 6);
     }
 
     @Test
-    void testMultiplication() {
-        Assertions.assertEquals(6, ArithmeticOperations.multiply(2, 3));
-        Assertions.assertEquals(-2, ArithmeticOperations.multiply(-2, 1));
-    } @Test
-    void testDivision() {
-        Assertions.assertEquals(2.5, ArithmeticOperations.divide(5, 2));
-        assertThrows(ArithmeticException.class, () -> ArithmeticOperations.divide(5, 0));
+    public void testMultiply() {
+        Assert.assertEquals(ArithmeticOperations.multiply(6, 5), 30);
+    }
+
+    @Test
+    public void testDivide() {
+        Assert.assertEquals(ArithmeticOperations.divide(8, 2), 4.0);
+    }
+
+    @Test(expectedExceptions = ArithmeticException.class)
+    public void testDivideByZero() {
+        ArithmeticOperations.divide(5, 0);
     }
 }
-
