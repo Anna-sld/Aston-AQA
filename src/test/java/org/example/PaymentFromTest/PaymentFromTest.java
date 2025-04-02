@@ -9,7 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
 import java.time.Duration;
 import java.util.Arrays;
 
@@ -42,6 +44,7 @@ class PaymentFormTest {
     }
 
     @Test
+    @Severity(SeverityLevel.MINOR)
     @DisplayName("Тест на соответствие названия блока «Онлайн пополнение без комиссии»")
     void OnlineReplenishmentWithoutCommissionHeaderTest() {
         WebElement header = paymentPage.getFormHeader();
