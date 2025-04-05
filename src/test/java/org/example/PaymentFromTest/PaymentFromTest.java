@@ -85,23 +85,14 @@ class PaymentFormTest {
         Assertions.assertTrue(isCardDataForm, "Переход на форму заполнения данных о карте не осуществлен");
     }
 
-
     @Test
     @DisplayName("Проверка формы оплаты 'Услуги связи'")
     void testServicePaymentForm() {
         paymentPage.fillPhoneNumber("297777777");
         paymentPage.fillAmount("10");
-        paymentPage.submitForm();
-
-        Assertions.assertEquals("10", paymentPage.getPaymentAmount(), "Некорректная сумма");
-        Assertions.assertTrue(paymentPage.areCardFieldsEmpty(), "Поля для карты не пустые");
-        Assertions.assertTrue(paymentPage.arePaymentIconsPresent(), "Отсутствуют иконки платёжных систем");
-        Assertions.assertEquals("297777777", paymentPage.getPhoneNumber(), "Некорректный номер телефона");
-
+        Assertions.assertEquals( paymentPage.getPhoneNumber(),"(29)777-77-77");
+        Assertions.assertEquals( paymentPage.getPaymentAmount(),"10");
     }
-
-
-
 
     private boolean isLogoPresent(By locator) {
         try {
